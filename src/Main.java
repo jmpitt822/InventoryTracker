@@ -45,15 +45,14 @@ public class Main {
     public static void newItem() {
         System.out.println("Enter the name of the item:");
         String itemName = scanner.nextLine();
-//        System.out.println("Enter the quantity of the item:");
-//        int itemQuantity = Integer.valueOf(scanner.nextLine());
         InventoryItem item = new InventoryItem(itemName);
         items.add(item);
     }
 
     public static void removeItem() {
         System.out.println("Enter the number of the item you wish to remove:");
-        int itemNum = Integer.valueOf(scanner.nextLine());
+        String removeChoice = scanner.nextLine();
+        int itemNum = Integer.parseInt(removeChoice);
         items.remove(itemNum - 1);
 
     }
@@ -63,8 +62,6 @@ public class Main {
         int itemNum = Integer.valueOf(scanner.nextLine());
 
             InventoryItem item = items.get(itemNum - 1);
-//        String updateName = items[itemNum - 1];
-//        int itemNum = Integer.valueOf(scanner.nextLine());
             System.out.println("Enter the quantity of the item:");
             int itemQuantity = Integer.valueOf(scanner.nextLine());
             item.quantity = itemQuantity;
